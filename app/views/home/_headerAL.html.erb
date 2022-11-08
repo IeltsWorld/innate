@@ -1,0 +1,194 @@
+<!-- 
+HEADER AFTER LOGIN
+
+--------
+
+DASHBOARD HEADER
+--> 
+
+
+<nav class="bg-white sticky top-0 z-50" data-controller ='header' >
+  <div 
+  
+  data-controller='headeral'
+  class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button  
+        data-headeral-target="openHeaderAl"
+        type="button" 
+        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+            <%= link_to root_path do %>
+            <img class="block lg:hidden h-10 w-auto" src="https://user-images.githubusercontent.com/85568177/180199777-943ddb61-32ea-4aa6-ac42-344eba0458d6.png" alt="Workflow">
+          <img class="hidden lg:block h-10 w-auto" src="https://user-images.githubusercontent.com/85568177/180199777-943ddb61-32ea-4aa6-ac42-344eba0458d6.png" alt="Workflow">
+        <% end %>
+          
+        </div>
+        <div  
+        class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4 mt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+
+
+            <% if current_user.teacher? %>
+
+            <a href="<%= teacher_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Dashboard</a>
+            
+            <% elsif current_user.admin? %>
+
+            <a href="<%= admin_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Dashboard</a>
+            
+            <% elsif current_user.student?  %>
+            <a href="<%= student_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Dashboard</a>
+            <% else %>
+
+            <% end %>
+            <a href="#" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Classroom</a>
+            <a href="<%= teacher_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page"> Teacher Dashboard</a>
+
+            <a href="<%= admin_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Admin Dashboard</a>
+            <a href="<%= student_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page"> Student Dashboard</a>
+
+
+            <a href="#" class=" text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Trello</a>
+
+            <a href="" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900 ">Calandar</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button type="button" class="bg-white p-1 rounded-full text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-white">
+          <span class="sr-only">View notifications</span>
+          <!-- Heroicon name: outline/bell -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+        
+
+        <!-- Profile dropdown -->
+        <div class="ml-3 relative">
+          <div>
+            <button data-header-target="openUserMenu" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <% if current_user&.avatar.attached? %>
+              <%= image_tag current_user&.avatar , class: "h-10 w-10 object-cover rounded-full"%>
+
+              <% else %>
+              <%= image_tag default_user_image , class: "h-10 w-10 object-cover rounded-full"%>
+              <% end %>
+              
+            </button>
+          </div>
+
+          <!--
+            Dropdown menu, show/hide based on menu state.
+
+            Entering: "transition ease-out duration-100"
+              From: "transform opacity-0 scale-95"
+              To: "transform opacity-100 scale-100"
+            Leaving: "transition ease-in duration-75"
+              From: "transform opacity-100 scale-100"
+              To: "transform opacity-0 scale-95"
+          -->
+          
+          <div 
+          class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" 
+          id ="menu-dropdown-items"
+          role="menu" 
+          aria-orientation="vertical" 
+          aria-labelledby="user-menu-button" 
+          tabindex="-1"
+          data-transition-enter="transition ease-out duration-100"
+          data-transition-enter-start="transform opacity-0 scale-95"
+          data-transition-enter-end="transform opacity-100 scale-100"
+          data-transition-leave="transition ease-in duration-75"
+          data-transition-leave-start="transform opacity-100 scale-100"
+          data-transition-leave-end="transform opacity-0 scale-95">
+          
+            <div class="py-1" role="none">
+
+            <!-- Add conditions here that if user student , teacher or admin then show different links -->
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Courses</a>
+            <!-- THis put method should be in admin dashboard where admin can make any student a teacher  -->
+
+            
+            <%= link_to "Make teacher role", teachermaker_path(user_id: current_user.id ), data: { "turbo_method": :put }, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " %>
+            <%= link_to "Make admin role", adminmaker_path(user_id: current_user.id ), data: { "turbo_method": :put }, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " %>
+            <%= link_to "Make student role", studentmaker_path(user_id: current_user.id ), data: { "turbo_method": :put }, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " %>
+
+            </div>
+            <% if user_signed_in?%>
+            <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-2">Help</a>
+            <a href="<%= settings_path%>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings(for backup)</a>
+            <a href="<%= profile_path(current_user)%>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <%= link_to "Sign out", destroy_user_session_path, data: { "turbo_method": :delete }, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div 
+    id="dropdown-items-al"
+    data-transition-enter="transition ease-out duration-100"
+    data-transition-enter-start="transform opacity-0 scale-95"
+    data-transition-enter-end="transform opacity-100 scale-100"
+    data-transition-leave="transition ease-in duration-75"
+    data-transition-leave-start="transform opacity-100 scale-100"
+    data-transition-leave-end="transform opacity-0 scale-95"
+    class=" hidden sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- 
+      
+      Mobile View
+       -->
+
+
+
+      <% if current_user.teacher? %>
+      
+      <a href="meow" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+      <% else %>
+      <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+      <% end %>
+      <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+      <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+      <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+    </div>
+  </div>
+</nav>

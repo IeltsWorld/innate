@@ -1,0 +1,194 @@
+    
+<!--
+Imported CSS for vanillajs-datepicker
+-->    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
+
+
+<div class="text-center max-w-xl mx-auto ">
+    <h1 class="text-4xl md:text-7xl font-bold mb-10 text-yellow-600" >Enjoy Live Classes...</h1>
+    <h1 class="text-4xl md:text-7xl font-bold mb-10 text-green-600" >Buy Premium Today </h1>
+    <div class="text-center max-w-xl mx-auto flex">
+    </div>
+</div>
+
+    <!-- Product info -->
+<div 
+  class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8"
+  
+  
+  >
+    <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+</div>
+    <!-- 
+    Start -->
+    <div class="mt-4 lg:mt-0 lg:row-span-3">
+      <div class="mt-10 lg:mt-0">
+        <h2 class="text-xl font-medium text-gray-900"><s>$110</s> $79 per month </h2>
+
+        <div class="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="sr-only">Items in your cart</h3>
+          <ul role="list" class="divide-y divide-gray-200">
+
+            <li class="flex py-6 px-4 sm:px-6">
+              <div class="flex-shrink-0">
+                <img src="https://user-images.githubusercontent.com/85568177/180199777-943ddb61-32ea-4aa6-ac42-344eba0458d6.png" alt="Front of men&#039;s Basic Tee in black." class="w-20 rounded-md">
+              </div>
+
+              <div class="ml-6 flex-1 flex flex-col">
+                <div class="flex">
+                  <div class="min-w-0 flex-1">
+                    <h4 class="text-sm">
+                      <a class="font-medium text-gray-700 hover:text-gray-800"> IeltsWorld Subscription </a>
+                    </h4>
+                    <p class="mt-1 text-sm text-gray-500">1 month </p>
+                    <p class="mt-1 text-sm text-green-500">BEST SELLER</p>
+                  </div>
+
+                  <div class="ml-4 flex-shrink-0 flow-root">
+                    <div type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500">
+                      <span class="sr-only">Remove</span>
+                      <!-- Heroicon name: solid/trash -->   
+                    </div>
+                  </div>
+                </div>
+
+<!-- 
+Reservation Component 
+-->
+<div
+  class="flex-1 pt-2 flex items-end justify-between"
+  >
+  <p class="mt-1 text-sm font-medium text-gray-900">$75.00</p>
+    <div class="ml-4">
+      <label for="quantity" class="sr-only">Quantity</label>
+        <select id="quantity" name="quantity" class="rounded-md border border-gray-300 text-base font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          <option value="1">7-8 pm IST</option>
+          <option value="2">8-9 pm IST</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</li>
+<!--
+End here 
+-->
+<div 
+data-controller="reservation-component" 
+  data-current-date="<%= Date.tomorrow.strftime("%m/%d/%Y")%>" 
+  data-best-end-date="<%= (Date.tomorrow + 10.day).strftime("%m/%d/%Y")%>" 
+  data-end-date="<%= (Date.tomorrow + 20.day).strftime("%m/%d/%Y")%>" 
+  data-end-date-most="<%= (Date.tomorrow + 30.day).strftime("%m/%d/%Y")%>" 
+class="isolate -space-y-px rounded-md shadow-sm border-t border-gray-200 py-6 px-4  sm:px-6">
+    <div class="relative border border-gray-300 rounded-md rounded-b-none px-3 py-2 focus-within:z-10 focus-within:ring-1 focus-within:ring-green-600 focus-within:border-green-600">
+        <label for="name" class="block text-xs font-medium text-gray-900 uppercase">Start date</label>
+        <input 
+        type="disabled"
+        name="job-title" 
+        id="job-title" 
+        class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" 
+        placeholder="<%= Date.tomorrow.strftime("%m/%d/%Y")%>"
+        data-reservation-component-target="checkin"
+        >
+    </div>
+    <div class="relative border border-gray-300 rounded-md rounded-t-none px-3 py-2 focus-within:z-10 focus-within:ring-1 focus-within:ring-green-600 focus-within:border-green-600">
+        <label for="job-title" class="block text-xs font-medium text-gray-900 uppercase">Ending Date</label>
+        <input 
+        name="job-title" 
+        id="job-title" 
+        class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" 
+        placeholder="<%= (Date.tomorrow + 10.day).strftime("%m/%d/%Y")%>"
+        data-reservation-component-target="checkout"
+
+        >
+    </div>
+</div>
+
+<dl class="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
+    
+
+    <div class="flex items-center justify-between border-t border-gray-200 pt-6">
+        <dt class="text-base font-medium">Total</dt>
+        <dd class="text-base font-medium text-gray-900">$75.52</dd>
+    </div>
+</dl>
+
+<div class="border-t border-gray-300 py-6 px-4 sm:px-6">
+    <button 
+    data-submit-url="<%= new_reservation_path()%>"
+    data-action="reservation-component#submitReservationComponent"
+    type="submit" 
+    class="w-full bg-amber-400 cursor-pointer border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Confirm order</button>
+</div>
+
+
+</div>
+
+<div class="border-t border-gray-300 py-6 px-4 sm:px-6">
+        <h3 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-3xl"> 📍 For more plans checkout the pricing section! </h3>
+</br>
+</br>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <%= link_to "🔗  Pricing", buynow_path, class:"w-full bg-amber-400 cursor-pointer border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500" %>
+</div>
+
+</div>
+</div>
+
+      <div class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+        <!-- Description and details -->
+        <div>
+          <h3 class="sr-only">Description</h3>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-3xl"> 🤔 Why you should subscribe ? </h1>
+
+          <div class="space-y-6">
+            <p class="text-lg text-gray-900"> 
+          <br>
+          <h3 class="text-3xl">Perks we offer</h3>
+            <br>
+            🟣 meow get live Classes
+
+            <br>
+            <br>
+            🟢 personal mentorship
+            <br>
+            <br>
+            🔵 course created by experts with 10+ yrs teaching experience 
+            <br>
+            <br>
+            🔴 Browse our free and paid courses
+            <br>
+            <br>
+
+            🟠 Become IELTS ready in 2 weeks 
+            <br>
+            <br>
+            🟡 Live one to one sessions to improve speaking skills
+            <br>
+            <br>
+
+            🟤 meow 
+
+<!--
+Put one image here ... of the product
+-->
+
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

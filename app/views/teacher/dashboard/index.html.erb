@@ -1,0 +1,142 @@
+
+
+<html class="h-full bg-gray-50">
+<body class="h-full">
+
+  <main class="max-w-7xl mx-auto pb-10 lg:py-12 lg:px-2">
+
+    <div class="lg:grid lg:grid-cols-12 lg:gap-x-5">
+      <%= render 'teacher/dashboard/sidebar'%>
+      <!-- Payment details -->
+      <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
+        <section aria-labelledby="payment-details-heading">
+
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="bg-white py-6 px-4 sm:p-6">
+                
+                      <main class="flex-1 pb-8">
+
+                        <!-- Page header -->
+                        <div class="bg-white shadow">
+                            <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                            <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-gray-200">
+                                <div class="flex-1 min-w-0">
+                                <!-- Profile -->
+                                <div class="flex items-center">
+                                    <% if current_user&.avatar.attached? %>
+                                        <%= image_tag current_user&.avatar , class: "hidden h-16 w-19 rounded-full sm:block"%>
+
+                                        <% else %>
+                                        <%= image_tag default_user_image , class: "hidden h-16 w-19 rounded-full sm:block"%>
+                                    <% end %>
+                                    
+                                    <div>
+                                    <div class="flex items-center">
+                                    <% if current_user&.avatar.attached? %>
+                                        <%= image_tag current_user&.avatar , class: "h-16 w-16 rounded-full sm:hidden"%>
+
+                                        <% else %>
+                                        <%= image_tag default_user_image , class: "h-16 w-16 rounded-full sm:hidden"%>
+                                    <% end %>
+                                    
+                                        <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">Welcome 👋 , <%= current_user.full_name%></h1>
+                                    </div>
+                                    <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
+                                        <dt class="sr-only">Company</dt>
+                                        <dd class="flex items-center text-sm text-gray-500 font-medium capitalize sm:mr-6">
+                                        <!-- Heroicon name: solid/office-building -->
+                                        <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
+                                        </svg>
+                                        Innate
+                                        </dd>
+                                        <dt class="sr-only">Account status</dt>
+                                        <dd class="mt-3 flex items-center text-sm text-green-700 font-medium sm:mr-6 sm:mt-0 capitalize">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg fill="#1a8f33" class="flex-shrink-0 mr-1.5 h-5 w-5 text-purple-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"  aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        Verified <%= current_user.role%>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
+                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">Add money</button>
+                                <%= link_to "Create New FreeCourse",new_teacher_freecourse_path() , class: "inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700"%>
+                                </div>
+
+                            </div>
+                            </div>
+                            
+                        </div>
+        
+            <br>
+            <br>
+            <h2 class="text-4xl leading-6 font-medium text-gray-900 ">Your Courses</h2>
+
+            <br>
+            <br>
+            <hr>
+
+            <div class="bg-white shadow overflow-hidden sm:rounded-md">
+
+            <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <% @freecourses.each do |freecourse| %>
+
+              <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+                    <%= link_to freecourse_path(freecourse), class: "block hover:bg-gray-50" do %>
+
+                <div class=" bg-green-100 w-full flex items-center justify-between p-6 space-x-6">
+                  <div class="flex-1 truncate">
+                    <div class=" flex items-center space-x-3">
+                      <h3 class="text-gray-800 text-sm font-medium truncate"><%= freecourse.name%></h3>
+                    </div>
+                    <p class="mt-1 text-gray-500 text-sm truncate">by ~<%= freecourse.author%></p>
+                    
+                  </div>
+                        <%= image_tag freecourse.default_image, class:"h-19 w-16 rounded-md flex-shrink-0  bg-gray-300 object-cover "%>
+
+                </div>
+                
+                <div>
+                  <div class="-mt-px flex divide-x divide-gray-200">
+                    <div class="w-0 flex-1 flex">
+                    <%= link_to edit_teacher_freecourse_path(freecourse), class: "relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500" do %>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                        </svg>
+
+                        <span class="ml-3 text-yellow-500">Edit</span>
+                      </a>
+                      <% end %>
+                    </div>
+                    <div class="-ml-px w-0 flex-1 flex">
+                    <%= link_to teacher_freecourse_path(freecourse), data: { "turbo-method": :delete } ,class: "relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500" do %>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                        </svg>
+
+                        <span class="ml-3 text-red-600">Delete</span>
+                      </a>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <% end %>
+              <% end %>
+
+              <!-- More people... -->
+            </ul>
+
+            </div>
+
+
+
+    </div>
+  </main>
+</div>
