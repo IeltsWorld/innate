@@ -18,6 +18,7 @@ namespace :fly do
   #  - failures here result in VM being stated, shutdown, and rolled back
   #    to last successful deploy (if any).
   task :server => :swapfile do
+    sh 'assets:precompile'
     sh 'bin/rails server'
   end
 
