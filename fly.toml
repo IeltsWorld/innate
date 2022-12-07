@@ -1,6 +1,6 @@
-# fly.toml file generated for ielts-app on 2022-12-07T20:15:57+05:30
+# fly.toml file generated for innate on 2022-12-07T22:51:59+05:30
 
-app = "ielts-app"
+app = "innate"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
