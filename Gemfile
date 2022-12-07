@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 gem "devise"
 
 gem "pundit"
+gem 'pg', '~> 1.1'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
