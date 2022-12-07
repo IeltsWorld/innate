@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: ielts_app_production
   username: ielts_app
   password: <%= ENV["IELTS_APP_DATABASE_PASSWORD"] %>
