@@ -21,7 +21,7 @@ data-controller = "courses"
             <li class= "relative">
 
                 <div class= "group block w-full aspect-w-10 aspect-h-7 overflow-hidden shadow-lg rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 "> 
-                        <%= image_tag freecourse.default_image , class: "object-cover pointer-events-none group-hover:opacity-75" %>
+                        <%= image_tag freecourse.default_image , class: "object-cover pointer-events-none group-hover:opacity-75" if freecourse.default_image %>
                         <button type="button" class="absolute inset-0 focus:outline-none">
                             <span class="sr-only">View detalls for IMG 4985.HEIC</span>
                         </button>

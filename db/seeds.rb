@@ -2,7 +2,7 @@
 
 user_avatars = []
 
-16.times do =
+16.times do 
     user_avatars << URI.parse(Faker::LoremFlickr.image).open
 end
 
