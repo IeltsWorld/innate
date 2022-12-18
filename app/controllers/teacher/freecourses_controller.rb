@@ -4,7 +4,7 @@ module Teacher
         before_action :authenticate_user!
 
         def new
-            authorize current_user, policy_class: TeacherPolicy
+            authorize current_user # , policy_class: TeacherPolicy
             @freecourse = Freecourse.new(user: current_user)
         end  
 
@@ -15,16 +15,13 @@ module Teacher
                 redirect_to teacher_dashboard_path
             else
                 render :new
-            end 
-        end 
+            end
+        end
 
         def edit
-            authorize current_user, policy_class: TeacherPolicy
-
-            @freecourse= Freecourse.find(params[:id])
-            
-        
-        end 
+          authorize current_user # , policy_class: TeacherPolicy
+          @freecourse = Freecourse.find(params[:id])
+        end
 
         def update
 

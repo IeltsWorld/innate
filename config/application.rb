@@ -33,13 +33,11 @@ module IeltsApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("lib")
     config.eager_load_paths << "#{config.root}/lib"
-
+config.require_master_key = false
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.autoloader = :classic
     config.eager_load = true
-
-  
     config.assets.initialize_on_precompile = false
 
   end

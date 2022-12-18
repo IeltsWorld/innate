@@ -97,8 +97,9 @@
                     <p class="mt-1 text-gray-500 text-sm truncate">by ~<%= freecourse.author%></p>
                     
                   </div>
+ <% if freecourse.default_image %>
                         <%= image_tag freecourse.default_image, class:"h-19 w-16 rounded-md flex-shrink-0  bg-gray-300 object-cover "%>
-
+                      <% end %>
                 </div>
                 
                 <div>
