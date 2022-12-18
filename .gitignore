@@ -27,6 +27,14 @@
 
 /public/assets
 
+*.DS_Store
+
+public/system/*
+
+public/.DS_Store
+
+.DS_Store
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
