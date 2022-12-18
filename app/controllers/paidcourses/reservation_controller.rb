@@ -1,5 +1,5 @@
 module Paidcourses
-    class ReservationsController < ApplicationController
+    class ReservationController < ApplicationController
         before_action :authenticate_user!
         def new 
             @paidcourse = Paidcourse.find(params[:name])

@@ -22,7 +22,8 @@ module IeltsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    Rails.autoloaders.main.ignore(Rails.root.join('lib/generators/asset_manifest_generator.rb'))
+    # Rails.autoloaders.main.ignore(Rails.root.join('lib/generators/asset_manifest_generator.rb'))
+    Rails.autoloaders.main.ignore("#{config.root}/lib/tasks")
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -30,7 +31,8 @@ module IeltsApp
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    config.eager_load_paths << Rails.root.join("lib")
+    # config.eager_load_paths << Rails.root.join("lib")
+    config.eager_load_paths << "#{config.root}/lib"
 
     # Don't generate system test files.
     config.generators.system_tests = nil
