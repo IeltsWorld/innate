@@ -40,5 +40,7 @@ config.require_master_key = false
     config.eager_load = true
     config.assets.initialize_on_precompile = false
 
+    config.active_storage.variant_processor = :mini_magick
+
   end
 end
