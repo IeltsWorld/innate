@@ -37,7 +37,7 @@ end
 
 # for paid course
 
-
+=begin
 5.times do |i|
     paidcourse = Paidcourse.create!(
         name: Faker::Lorem.unique.word,
@@ -53,3 +53,4 @@ end
         Review.create(reviewable: paidcourse , rating: (1..5).to_a.sample, title: Faker::Lorem.word , body: Faker::Lorem.paragraph , user: User.all.sample)
     end 
 end 
+=end
