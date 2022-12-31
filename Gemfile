@@ -62,7 +62,7 @@ gem 'mini_magick'
 
 
 
-gem "ruby-vips"
+# gem "ruby-vips"
 
 
 
