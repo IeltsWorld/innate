@@ -3,7 +3,7 @@ module Teacher
         before_action :authenticate_user!
 
         def index 
-            authorize current_user, policy_class: TeacherPolicy
+         #   authorize current_user, policy_class: TeacherPolicy
             @freecourses= current_user.freecourses
         end 
 
