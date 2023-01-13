@@ -61,8 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_163746) do
     t.datetime "updated_at", null: false
     t.integer "reviews_count"
     t.decimal "average_rating"
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_freecourses_on_user_id"
+   # t.bigint "user_id", null: false
+   # t.index ["user_id"], name: "index_freecourses_on_user_id"
   end
 
   create_table "paidcourses", force: :cascade do |t|

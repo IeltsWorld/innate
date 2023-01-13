@@ -2,8 +2,6 @@
 
 <html class="h-full bg-gray-50">
 <body class="h-full">
-
-
   <main class="max-w-7xl mx-auto pb-10 lg:py-12 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-5">
      <%= render 'teacher/dashboard/sidebar'%>
@@ -13,13 +11,14 @@
 
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="bg-white py-6 px-4 sm:p-6">
-              <%= form_with model: @freecourse, url: teacher_freecourse_path(@freecourse), method: :patch, local: true do |f| %>
-                
+                <%= form_with model: @freecourse , url: teacher_freecourses_path(), local: true do |f| %>
+
+                                    
                     <div class="space-y-8 divide-y divide-gray-200">
                         <div>
                         <div>
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">Edit Freecourse </h3>
-                            <p class="mt-1 text-sm text-gray-500"> Edit your Freecourse here .</p>
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">New Freecourse</h3>
+                            <p class="mt-1 text-sm text-gray-500"> Add new Freecourse here .</p>
                         </div>
 
                         <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
@@ -35,13 +34,16 @@
                                 </span>
                                 &nbsp;
                                 <%= f.file_field :images , class: "ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"%>
+
                             </div>
                             </div>
                     
+
+
                         </div>
                         </div>
 
-            
+                  
                         <div class="pt-8">
                         <div>
                             <h3 class="text-lg leading-6 font-medium text-gray-900">Jibber Jabber</h3>
@@ -77,7 +79,7 @@
                             <div class="col-span-6 sm:col-span-6">
                             <label for="about" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"> Content </label>
                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <%= f.text_area :description , size: "30x10", class: "shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"%>
+                                <%= f.text_area :description , class: "shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"%>
                                 <p class="mt-2 text-sm text-gray-500">Write the content here.</p>
                             </div>
                             </div>
@@ -91,7 +93,6 @@
 
                     
                     </div>
-
             <% end %>
 
         </section>

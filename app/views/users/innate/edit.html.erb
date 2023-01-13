@@ -1,0 +1,143 @@
+
+  <main class="max-w-7xl mx-auto pb-10 lg:py-12 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-x-5">
+     <%= render 'accounts/sidebar'%>
+      <!-- Payment details -->
+      <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
+        <section aria-labelledby="payment-details-heading">
+        <%= form_with model: @user, local: :true, url: profile_update_path(@user) do |f| %>
+
+          <div class="flex-1 xl:overflow-y-auto">
+            <div class="max-w-3xl mx-auto py-10 px-4 sm:px-6 lg:py-12 lg:px-8">
+              <h1 class="text-3xl font-extrabold text-blue-gray-900">Profile Settings</h1>
+                    </br>
+              <form class="mt-6 space-y-8 divide-y divide-y-blue-gray-200">
+                <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
+                  <div class="sm:col-span-6">
+                    <h2 class="text-xl font-medium text-blue-gray-900">Update your profile now!</h2>
+                    <p class="mt-1 text-sm text-blue-gray-500">This information will be displayed publicly so be careful what you share.</p>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <%= f.label :first_name , class: "block text-sm font-medium text-blue-gray-900"%>
+                    <%= f.text_field :first_name, class: "mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+                </div>
+                  <div class="sm:col-span-3">
+                    <%= f.label :last_name , class: "block text-sm font-medium text-blue-gray-900"%>
+                    <%= f.text_field :last_name, class: "mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+                </div>
+
+                  
+
+                  <div class="sm:col-span-6">
+                    <label for="username" class="block text-sm font-medium text-blue-gray-900"> Username </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-blue-gray-300 bg-blue-gray-50 text-blue-gray-500 sm:text-sm"> innate.co.in/profiles </span>
+                      <%= f.text_field :user_name, class: " block w-full min-w-0 border-blue-gray-300 rounded-none rounded-r-md text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+                    
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-6">
+                    <label for="photo" class="block text-sm font-medium text-blue-gray-900"> Photo </label>
+                    <div class="mt-1 flex items-center">
+                      <% if current_user&.avatar.attached? %>
+                        <%= image_tag current_user&.avatar , class: "h-10 w-10 object-cover rounded-full"%>
+
+              <% else %>
+              <%= image_tag default_user_image , class: "h-10 w-10 object-cover rounded-full"%>
+              <% end %>
+
+                      <div class="ml-4 flex">
+                        <div class="relative bg-white py-2 px-3 border border-blue-gray-300 rounded-md shadow-sm flex items-center cursor-pointer hover:bg-blue-gray-50 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-blue-gray-50 focus-within:ring-blue-500">
+                          
+                          <%= f.label :avatar, class: "absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" %>
+
+                          <label for="user-photo" class="relative text-sm font-medium text-blue-gray-900 pointer-events-none">
+                            <span>Change</span>
+                            <span class="sr-only"> user photo</span>
+                          </label>
+                          <%= f.file_field :avatar, class: "absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" %>
+
+                        </div>
+
+                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Upload</button>
+                      </div>
+                      
+                    </div>
+                      <p class="mt-3 text-sm text-blue-gray-500">Press Upload to load the image.</p>
+
+                  </div>
+
+                  <div class="sm:col-span-6">
+                    <label for="description" class="block text-sm font-medium text-blue-gray-900"> Description </label>
+                    <div class="mt-1">
+                      <%= f.text_area :description,size: '30x4', class: "block w-full border border-blue-gray-300 rounded-md shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+
+                    </div>
+                    <p class="mt-3 text-sm text-blue-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+                  </div>
+
+                  <div class="sm:col-span-6">
+                    <label for="url" class="block text-sm font-medium text-blue-gray-900"> URL </label>
+                    <%= f.text_field :url, class: " mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+
+                  </div>
+                </div>
+
+                <div class="pt-8 grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
+                  <div class="sm:col-span-6">
+                    <h2 class="text-xl font-medium text-blue-gray-900">Personal Information</h2>
+                    <p class="mt-1 text-sm text-blue-gray-500">This information will be displayed publicly so be careful what you share.</p>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <%= f.label :email , class: "block text-sm font-medium text-blue-gray-900"%>
+
+                    <%= f.text_field :email , class: "mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="phone-number" class="block text-sm font-medium text-blue-gray-900"> Phone number </label>
+                    <%= f.text_field :phone , class: "mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500"%>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="country" class="block text-sm font-medium text-blue-gray-900"> Country </label>
+                    <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500">
+                      <option></option>
+                      <option>United States</option>
+                      <option>Canada</option>
+                      <option>Mexico</option>
+                    </select>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="language" class="block text-sm font-medium text-blue-gray-900"> User Id </label>
+                    <select id="country" name="country" placeholder="<%= @user.id%> " class="mt-1 block w-full border-blue-gray-300 rounded-md shadow-sm text-blue-gray-900 sm:text-sm focus:ring-blue-500 focus:border-blue-500">
+                      <option><%= @user.id%> </option>
+                      
+                    </select>
+                  </div>
+
+                  <p class="text-sm text-blue-gray-500 sm:col-span-6">This account was created on  <%= @user.created_at%></p>
+                  <p class="text-sm text-blue-gray-500 sm:col-span-6">Last Updated at   <%= @user.updated_at%></p>
+                </div>
+                 <%= @client_full_name%>
+                <div class="pt-8 flex justify-end">
+                  <button href= ""type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-blue-gray-900 hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Cancel</button>
+                  <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>

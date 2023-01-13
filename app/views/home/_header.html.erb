@@ -7,11 +7,9 @@ ALSO MAIN HEADER FOR BLOG
 --> 
 <div class=" sticky top-0 z-50 bg-white border-gray-200 px-2 sm:px-6 py-2.5 rounded dark:bg-white-700" data-controller='mainmenu' >
     <div class="container flex flex-wrap justify-between items-center mx-auto">
-    
         <a href="<%=root_path%>" class="flex items-center">
             <img src= "https://user-images.githubusercontent.com/85568177/180199777-943ddb61-32ea-4aa6-ac42-344eba0458d6.png" class="mr-4 h-6 sm:h-9" alt="Flowbite Logo">
             <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-dark">Innate</span>
-            
         </a>
         <div 
             class="flex md:order-2"
@@ -27,10 +25,8 @@ ALSO MAIN HEADER FOR BLOG
             data-transition-leave-start="transform opacity-100 scale-100"
             data-transition-leave-end="transform opacity-0 scale-95"
             >
-
             <%= link_to 'Login' ,  new_user_session_path, class: " block w-1/2 px-2 py-1 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-green-700 md:mx-2 md:w-auto"%>
             <%= link_to 'Join Free' ,  new_user_registration_path, class: " block w-1/2 px-2 py-1 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-700 md:mx-0 md:w-auto"%>
-
 
             <button data-mainmenu-target="openMainMenu"  type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
