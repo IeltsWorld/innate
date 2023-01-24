@@ -7,7 +7,7 @@ class Freecourse < ApplicationRecord
   validates :description, presence: true
   validates :author, presence: true
 
-  belongs_to :user
+  belongs_to :user, optional: true
   # no monetise
   # no geolocation
   has_many_attached :images
