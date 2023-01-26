@@ -1,3 +1,5 @@
+
+
 class PasswordsController < ApplicationController
 
     def show

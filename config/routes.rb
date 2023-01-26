@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   scope "/users" do
     get "/:id/profile", to: redirect('/users/%{id}'), as: "profile"
+   # get "/:id/profile", to: "users/innate#show", as: "profile"
     get "/:id/profile/update", to: "users/innate#edit", as: "profile_update"
  #   patch "/:id/update", to: "users/innate#update", as: "profile_update"
     get "/:id/groups", to: "users/innate#groups", as: "user_groups"

@@ -12,7 +12,7 @@ class Users::InnateController < ApplicationController
 
    def show 
        @user = User.find(params[:id])
-       authorize @user, policy_class: ProfilePolicy
+       authorize @user #, policy_class: ProfilePolicy
    end
 
    def edit; end
