@@ -21,8 +21,6 @@ class AdminPolicy < ApplicationPolicy
       user.admin?
     end 
 
-
-
     def new?
       user.admin?
     end 

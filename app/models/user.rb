@@ -27,6 +27,7 @@ class User < ApplicationRecord
 
   # if not working then remove the .freeze method on ROLES array
   ROLES = %w[student teacher admin].freeze
+
   validates :role, inclusion: { in: ROLES }, allow_nil: true
   def teacher?
     role == 'teacher'

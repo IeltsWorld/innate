@@ -84,7 +84,7 @@
             <div class="bg-white shadow overflow-hidden sm:rounded-md">
 
             <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <% @freecourses.each do |freecourse| %>
+               <%  @freecourses.each do |freecourse| %>
 
               <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
                     <%= link_to freecourse_path(freecourse), class: "block hover:bg-gray-50" do %>
@@ -97,7 +97,7 @@
                     <p class="mt-1 text-gray-500 text-sm truncate">by ~<%= freecourse.author%></p>
                     
                   </div>
- <% if freecourse.default_image %>
+                      <% if freecourse.default_image %>
                         <%= image_tag freecourse.default_image, class:"h-19 w-16 rounded-md flex-shrink-0  bg-gray-300 object-cover "%>
                       <% end %>
                 </div>
@@ -112,7 +112,9 @@
 
                         <span class="ml-3 text-yellow-500">Edit</span>
                       </a>
-                      <% end %>
+
+                    <%end%>
+
                     </div>
                     <div class="-ml-px w-0 flex-1 flex">
                     <%= link_to teacher_freecourse_path(freecourse), data: { "turbo-method": :delete } ,class: "relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500" do %>
@@ -129,13 +131,12 @@
                 </div>
               </li>
               <% end %>
-              <% end %>
-
+            <% end %>
+  
               <!-- More people... -->
             </ul>
 
             </div>
-
 
 
     </div>
