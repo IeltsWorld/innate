@@ -44,12 +44,11 @@ Rails.application.routes.draw do
     post "/:id/notifications/mark_as_read/:notification_id", to: "users/noticed_notifications#mark_as_read", as: "mark_as_read"
   end
 
-
   namespace :teacher do
     get '/dashboard' => 'dashboard#index', as: :dashboard
     resources :freecourses, except: :index
   end
-  
+
   namespace :dashboard do
     get '/dashboard' => 'dashboard#index', as: :dashboard
     resources :freecourses, except: :index
