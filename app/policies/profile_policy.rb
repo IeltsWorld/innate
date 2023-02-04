@@ -4,14 +4,12 @@ class ProfilePolicy < ApplicationPolicy
     #   scope.all
     # end
 
-
     def show?
       user == record
     end 
 
     def update?
       user == record
-
     end 
-
 end
+

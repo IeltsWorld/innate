@@ -25,6 +25,5 @@ class StudentPolicy < ApplicationPolicy
     def new?
       user.student?
     end 
-
-
 end
+

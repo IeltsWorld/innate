@@ -28,3 +28,4 @@ class TeacherPolicy < ApplicationPolicy
     user.teacher?
   end 
 end
+
