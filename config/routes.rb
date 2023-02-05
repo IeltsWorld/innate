@@ -2,11 +2,17 @@
 
 Rails.application.routes.draw do
   devise_for :users
+  # configure root
+  # https://github.com/CircuitVerse/CircuitVerse/blob/master/config/routes.rb#L66
+  #
   root 'home#index'
-
+  # change root to innate/index
   get '/buynow', to: 'home#buynow'
   get '/settings', to: 'home#settings'
 
+  # for routes 
+  # https://github.com/CircuitVerse/CircuitVerse/blob/master/config/routes.rb
+  #
   # API
   namespace :api do
     # get '/users_by_email' => "users_by_emails#show", as: :users_by_email
@@ -28,7 +34,6 @@ Rails.application.routes.draw do
   put '/teachermaker/:user_id' => 'teachermaker#update', as: :teachermaker
   put '/adminmaker/:user_id' => 'adminmaker#update', as: :adminmaker
   put '/studentmaker/:user_id' => 'studentmaker#update', as: :studentmaker
-
 
   scope "/users" do
     get "/:id/profile", to: redirect('/users/%{id}'), as: "profile"
