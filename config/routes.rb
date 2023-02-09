@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get '/buynow', to: 'home#buynow'
   get '/settings', to: 'home#settings'
 
+
+
+  require "sidekiq/web"
+  mount Sidekiq::Web => "/sidekiq"
+
   # for routes 
   # https://github.com/CircuitVerse/CircuitVerse/blob/master/config/routes.rb
   #
