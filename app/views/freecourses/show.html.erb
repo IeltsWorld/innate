@@ -2,31 +2,7 @@
 Green Navbar
 -->
 
-<nav class="w-full py-6 bg-green-500 shadow">
-    <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-        <nav>
-            <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                <li><span class=" hover:text-yellow-700 px-0">Sign Up for </span>
-                </br>
-                <span class=" hover:text-yellow-700 px-0">premium content... </span></li>
-            </ul>
-        </nav>
-        <div class="flex items-center text-lg no-underline text-white pr-6">
-            <a class="pl-6" target="_blank" href="https://www.linkedin.com/in/vaibhav-upreti-739b0421a/">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a class="pl-6" target="_blank" href="https://twitter.com/vaibhav__upreti">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a class="pl-6" target="_blank" href="">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a class="pl-6" target="_blank" href="#">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-</nav>
+
 <!-- 
 Course Heading
 -->
@@ -99,14 +75,14 @@ Start here
 
         <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
             <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
-                <img src="https://user-images.githubusercontent.com/85568177/187031479-898f416c-5cb8-4e91-8c0b-48404fa9ca0e.JPG" class=" object-cover shadow rounded-full h-20 w-20">
+                <img src="https://img.freepik.com/premium-photo/man-with-orange-shirt-is-circle-with-man-orange_745528-3525.jpg" class=" object-cover shadow rounded-full h-20 w-20">
             <span class="flex h-3 w-3">
 
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
             </div>
             <div class="flex-1 flex flex-col justify-center md:justify-start">
-                <p class="font-semibold text-2xl">Meena Upreti | <%= @freecourse.author%></p>
+                <p class="font-semibold text-2xl"> <%= @freecourse.author%></p>
                 <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel neque non libero suscipit suscipit eu eu urna.</p>
                 <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-green-600 pt-4">
                     <a class="" href="#">
@@ -134,8 +110,9 @@ Start here
 
         >
             <p class="text-xl font-semibold pb-5 "> 📌 About Us</p>
-            <p class="pb-2">🐱 Meow . Meow courses on writing , reading , speaking and listening . We are just a gig of bunch of cats.</p>
-            <a href="" class=" w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-green-400 flex items-center justify-center px-2 py-3 mt-4">
+            <p class="pb-2"> 📚 Innate provides a platform for the seamless sharing of English content. 🌟</p>
+
+            <a href="<%= buynow_path%>" class=" w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-green-400 flex items-center justify-center px-2 py-3 mt-4">
                 📒 &nbsp;Get to know us
             </a>
             
@@ -148,7 +125,7 @@ Start here
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
                     </svg>                &nbsp;
-                    Copy Link 
+                    Copy Link
             </button>
         &nbsp; &nbsp;
         <%= link_to do %>
@@ -156,41 +133,9 @@ Start here
                     🔖    &nbsp; Save 
             </button>
         <% end %>
-
-
-        <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-            <p class="text-xl font-semibold pb-5">Instagram</p>
-            <div class="grid grid-cols-3 gap-3">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
-                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
-            </div>
-            <a href="#" class="w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-green-400 flex items-center justify-center px-2 py-3 mt-6">
-                <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
-            </a>
-        </div>
     </aside>
 </div>
 
-<br>
-<hr>
-
-<br>
-<br>
-<br>
-
-
-
-<%= render 'shared/order'%>
 
 <%= render 'freecourses/includes/review_section'%>
-
-
-
-<%= render 'shared/courses_carousel'%>
+<%= render 'shared/order'%>

@@ -55,7 +55,6 @@ DASHBOARD HEADER
           <div class="flex space-x-4 mt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
-            <%= link_to "Final Dashboard", dashboard_dashboard_path(), class: "text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900"%>
 
             <% if current_user.teacher? %>
 
@@ -69,12 +68,10 @@ DASHBOARD HEADER
             <a href="<%= student_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Dashboard</a>
             <% else %>
 
+            <a href="<%= teacher_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page"> Dashboard</a>
             <% end %>
             <a href="#" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Classroom</a>
-            <a href="<%= teacher_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page"> Teacher Dashboard</a>
 
-            <a href="<%= admin_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page">Admin Dashboard</a>
-            <a href="<%= student_dashboard_path()%>" class="text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" aria-current="page"> Student Dashboard</a>
 
 
             <a href="#" class=" text-white bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-bold rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Trello</a>
