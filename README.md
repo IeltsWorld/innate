@@ -1,6 +1,14 @@
 # Innate 
 📚 Innate provides a platform for the seamless sharing of English content.
 
+## Tech Stack
+
+- Rails 7.0
+- Postgresql >= 12.0
+- Sidekiq
+- Redis
+
+
 ## Course Blog
 ![blog](https://github.com/IeltsWorld/innate/assets/85568177/8b55c7ad-9eb3-4e97-996a-42b981e055ec)
 
