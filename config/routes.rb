@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
+
 Rails.application.routes.draw do
   devise_for :users
   # configure root
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
   get '/buynow', to: 'home#buynow'
   get '/settings', to: 'home#settings'
 
-
+  resources :about, only: :index
+  get "/404", to: "errors#not_found"
+  get "/422", to: "errors#unacceptable"
+  get "/500", to: "errors#internal_error"
 
   require "sidekiq/web"
   mount Sidekiq::Web => "/sidekiq"
@@ -73,3 +78,4 @@ Rails.application.routes.draw do
     get '/dashboard' => 'dashboard#index', as: :dashboard
   end
 end
+# rubocop:enable Metrics/BlockLength
